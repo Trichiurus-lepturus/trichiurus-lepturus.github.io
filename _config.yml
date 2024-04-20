@@ -4,16 +4,20 @@
 
 # Site
 title: 海鲜市场的带鱼摊子
-subtitle: ''
+subtitle: 'daiyu.host'
 description: 'A simple blog'
 keywords:
+  - foss
+  - openSUSE
+  - music
+  - journal
 author: Trichiurus-lepturus
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://trichiurus-lepturus.github.io
+url: https://daiyu.host
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:

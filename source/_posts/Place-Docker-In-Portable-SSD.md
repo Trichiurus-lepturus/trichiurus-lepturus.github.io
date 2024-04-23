@@ -62,7 +62,8 @@ sudo systemctl disable docker # since it's necessary to start the services manua
 sudo systemctl disable containerd # when the portable SSD is inserted, so disable them first
 sudo systemctl start docker
 ```
-此时Docker应当能够正常使用了。之后每次启动后，都需要插入移动硬盘并挂载，然后`systemctl start docker`。
+此时Docker应当能够正常使用了。  
+之后每次启动后，都需要插入移动硬盘并挂载，然后`systemctl start docker`。
 
 这显然是极为麻烦的，所以我写了一个脚本：
 ```bash
@@ -97,7 +98,6 @@ systemctl status docker
 ```
 不知道分区的UUID可以使用`lsblk -o NAME,UUID`进行查看
 
-将脚本赋予执行权限。  
-之后每次需要用Docker前，都先插入移动硬盘，然后运行这个脚本。
+将脚本赋予执行权限。之后每次需要用Docker前，都先插入移动硬盘，然后运行这个脚本。
 
 \*献给所有本机硬盘空间不太够的Docker重度用户

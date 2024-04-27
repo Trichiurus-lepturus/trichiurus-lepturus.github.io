@@ -8,6 +8,8 @@ tags:
 ---
 
 ## 概述
+Kate版本：kate 24.02.2
+
 [Kate](https://kate-editor.org/zh-cn/)是KDE下的一款文本编辑器，做些轻量级的文本编辑非常好用  
 VSCode相对于Kate还是太重了（
 

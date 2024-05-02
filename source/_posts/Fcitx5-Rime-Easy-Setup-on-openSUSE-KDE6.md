@@ -65,8 +65,8 @@ rime_frontend=fcitx5-rime ./rime-install iDvel/rime-ice:others/recipes/config:sc
 ### Fcitx5
 有些选项需要在`fcitx5-configtool`中配置
 
-如调整字体大小：`fcitx5-configtool` - Addons - Classic User Interface - *Font；  
-竖排候选：… - Classic User Interface - Vertical Candidate List
+如更改快捷键：`fcitx5-configtool` - Global Options - Hotkey；  
+竖排候选：`fcitx5-configtool` - Addons - Classic User Interface - Vertical Candidate List
 
 ### Rime
 参考[Rime 定製指南](https://github.com/rime/home/wiki/CustomizationGuide)，使用`patch`功能进行自定义。  

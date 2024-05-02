@@ -108,14 +108,6 @@ deploy:
   type: git
   repo: git@github.com:Trichiurus-lepturus/trichiurus-lepturus.github.io.git
   branch: website
-  # token: ''
-  # message: deployment
-  # name: Trichiurus-lepturus
-  # email: 144453663+Trichiurus-lepturus@users.noreply.github.com
-  # extend_dirs: /
-  # ignore_hidden: false # default is true
-  # ignore_pattern:
-    # public: .
 
 # Search
 search:

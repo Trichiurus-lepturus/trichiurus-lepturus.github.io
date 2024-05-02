@@ -30,19 +30,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages
+        uses: actions/configure-pages@v5
       - name: Use Node.js 20
-        uses: actions/setup-node
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
       - name: Cache NPM dependencies
-        uses: actions/cache
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.OS }}-npm-cache
@@ -53,7 +53,7 @@ jobs:
       - name: Build with Hexo
         run: npx hexo generate
       - name: Upload artifact
-        uses: actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
@@ -67,4 +67,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages
+        uses: actions/deploy-pages@v4

@@ -62,9 +62,17 @@ rime_frontend=fcitx5-rime ./rime-install iDvel/rime-ice:others/recipes/config:sc
 如需要外挂其他方案可搜索，并使用plum进行下载。
 
 ## 进一步的配置
+### Fcitx5
+有些选项需要在`fcitx5-configtool`中配置
+
+如调整字体大小：`fcitx5-configtool` - Addons - Classic User Interface - *Font；  
+竖排候选：… - Classic User Interface - Vertical Candidate List
+
+### Rime
 参考[Rime 定製指南](https://github.com/rime/home/wiki/CustomizationGuide)，使用`patch`功能进行自定义。  
 使用此功能已经超出了本文讨论的范围（因为直接修改Rime配置文件不符合本文“轻松”的概念），
 但能够定制出符合更加个性化需求的配置，让输入法更称手好用。  
-……事实上配置起来也并不难，只要先学习[yaml](https://yaml.org/spec/1.2.2/)的语法，再参考着“定製指南”中的说明和例子去写就好了
+……事实上配置起来也并不难，只要先学习[yaml](https://yaml.org/spec/1.2.2/)的语法，再参考着“定製指南”中的说明和例子去写就好了  
+Fcitx5-rime的配置文件夹在`~/.local/share/fcitx5/rime`
 
 *\*愿“聪明的输入法懂你心意”*

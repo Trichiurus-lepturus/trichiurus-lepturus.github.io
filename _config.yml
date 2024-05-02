@@ -7,7 +7,7 @@ title: 海鲜市场的带鱼摊子
 subtitle: 'daiyu.host'
 description: 'A simple blog'
 keywords:
-  - foss
+  - FOSS
   - openSUSE
   - music
   - journal
@@ -117,3 +117,9 @@ deploy:
   # ignore_pattern:
     # public: .
 
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html

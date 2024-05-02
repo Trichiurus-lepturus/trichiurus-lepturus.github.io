@@ -51,9 +51,9 @@ darkmode: true
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
+  small: /images/16x16.jpg
+  medium: /images/32x32.jpg
+  apple_touch_icon: /images/32x32.jpg
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /manifest.json
 

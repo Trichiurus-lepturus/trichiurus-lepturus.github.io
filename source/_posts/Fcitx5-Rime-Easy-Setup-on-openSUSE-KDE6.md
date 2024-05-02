@@ -32,7 +32,7 @@ export GTK_IM_MODULE=
 如果这两个环境变量非空，启动fcitx5后会收到警告，说建议取消掉它们；为空则不会收到此警告。
 
 安装完成后建议进行**重启**使配置生效；  
-在System Settings - Input & Output - Keyboard - Virtual Keyboard中选择Fcitx5并apply；  
+接着，在System Settings - Input & Output - Keyboard - Virtual Keyboard中选择Fcitx5并apply；  
 打开`fcitx5-configtool`，在右侧可用输入法找到`Rime`并添加到左侧当前输入法；  
 Fcitx5默认切换输入法快捷键为`Ctrl+Space`。
 

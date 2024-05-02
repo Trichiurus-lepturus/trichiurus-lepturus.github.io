@@ -45,6 +45,10 @@ cd plum
 ```
 
 ## 使用plum安装“雾凇拼音”配置
+[雾凇拼音](https://dvel.me/posts/rime-ice/)是一套Rime配置，其仓库在[此](https://github.com/iDvel/rime-ice)
+> “功能齐全，词库体验良好，长期更新修订”  
+> ——来自https://dvel.me/posts/rime-ice
+
 由于plum默认ibus框架，本文使用fcitx5框架，使用时要注意指定环境变量`rime_frontend=fcitx5-rime`  
 以安装完整配置以及启用小鹤双拼（非小鹤音形，小鹤音形我没学）为例：
 ```bash

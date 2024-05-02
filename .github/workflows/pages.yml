@@ -1,10 +1,8 @@
-# Sample workflow for building and deploying a Hexo site to GitHub Pages
-name: Deploy Hexo site to Pages
-
+name: Build & Deploy
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [$default-branch]
+    branches: master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -32,22 +30,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v3
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
       - name: Build with Hexo
-        run: npx hexo g
+        run: npx hexo generate
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
@@ -61,4 +66,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4

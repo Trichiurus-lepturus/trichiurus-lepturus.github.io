@@ -104,10 +104,10 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: git@github.com:Trichiurus-lepturus/trichiurus-lepturus.github.io.git
-  branch: website
+# deploy:
+#   type: git
+#   repo: git@github.com:Trichiurus-lepturus/trichiurus-lepturus.github.io.git
+#   branch: website
 
 # Search
 search:

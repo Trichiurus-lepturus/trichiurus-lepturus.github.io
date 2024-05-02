@@ -1,2 +1,2 @@
 # trichiurus-lepturus.github.io
-Blog. [URL](daiyu.host)
+Blog. [URL](https://daiyu.host)

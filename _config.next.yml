@@ -439,24 +439,24 @@ font:
   # Font settings for site title (.site-title).
   title:
     external: true
-    family: Noto Serif Simplified Chinese
-    size: 1.25
+    family: Zhi Mang Xing
+    size: 2
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
-    family: Noto Sans Simplified Chinese
-    size: 1.2
+    family: Noto Serif SC
+    size: 1.5
 
   # Font settings for posts (.post-body).
   posts:
     external: true
-    family: Noto Sans Simplified Chinese
+    family: Noto Sans SC
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: Jetbrains Mono
+    family: JetBrains Mono
 
 
 # ---------------------------------------------------------------

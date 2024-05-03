@@ -49,6 +49,8 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: Patch Packages
+        run: npx patch-package
       - name: Build with Hexo
         run: npx hexo generate
       - name: Upload artifact

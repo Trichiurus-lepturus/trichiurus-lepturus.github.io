@@ -935,7 +935,7 @@ waline:
   dark: "auto"
 
   # Waline server address url, you should set this to your own link
-  serverURL: https://waline-github-pages-5k4199zer-listsexpressions-projects.vercel.app/
+  serverURL: https://waline-github-pages.vercel.app
 
   # Waline library CDN url, you can set this to your preferred CDN
   # libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js

@@ -40,17 +40,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
+      # - name: Cache NPM dependencies
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: node_modules
+      #     key: ${{ runner.OS }}-npm-cache
+      #     restore-keys: |
+      #       ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
       - name: Patch Packages
         run: npx patch-package
+      - name: Hexo clean
+        run: npx hexo clean
       - name: Build with Hexo
         run: npx hexo generate
       - name: Upload artifact

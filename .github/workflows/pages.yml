@@ -49,10 +49,10 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
-      - name: Build with Hexo
-        run: npx hexo generate
       - name: Patch Packages
         run: npx patch-package
+      - name: Build with Hexo
+        run: npx hexo generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

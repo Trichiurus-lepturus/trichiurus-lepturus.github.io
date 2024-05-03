@@ -1,0 +1,32 @@
+diff --git a/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js b/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
+index 92a264d..0a80342 100644
+--- a/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
++++ b/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
+@@ -67,14 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
+   window.addEventListener('search:loaded', inputEventFunction);
+ 
+   // Handle and trigger popup window
++  function searchPopup(event) {
++    if (event.keyCode === 83) {
++      searchPopupClick();
++    }
++  }
++  function searchPopupClick() {
++    document.body.classList.add('search-active');
++    // Wait for search-popup animation to complete
++    setTimeout(() => input.focus(), 500);
++    if (!localSearch.isfetched) localSearch.fetchData();
++  }
+   document.querySelectorAll('.popup-trigger').forEach(element => {
+-    element.addEventListener('click', () => {
+-      document.body.classList.add('search-active');
+-      // Wait for search-popup animation to complete
+-      setTimeout(() => input.focus(), 500);
+-      if (!localSearch.isfetched) localSearch.fetchData();
+-    });
++    element.addEventListener('click', searchPopupClick);
+   });
++  document.addEventListener('keydown', searchPopup);
+ 
+   // Monitor main search box
+   const onPopupClose = () => {

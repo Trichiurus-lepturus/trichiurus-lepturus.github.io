@@ -102,8 +102,8 @@ menu:
   #categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
-  sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  links: /links/ || fa fa-compass
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -172,12 +172,13 @@ social_icons:
 
 # Blog rolls
 links_settings:
-  icon: fa fa-globe
+  icon: fa fa-paperclip
   # Available values: block | inline
   layout: block
 
 links:
-  "~💫~": /links/
+  "~📍~": /sitemap.xml
+
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).

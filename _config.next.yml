@@ -440,7 +440,7 @@ font:
   title:
     external: true
     family: Zhi Mang Xing
-    size: 2
+    size: 2.5
 
   # Font settings for headlines (<h1> to <h6>).
   headings:

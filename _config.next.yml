@@ -627,8 +627,8 @@ motion:
     # All available transition variants: https://theme-next.js.org/animate/
     menu_item: flipInX
     post_block: fadeIn
-    post_header: fadeInUp
-    post_body: fadeInUp
+    post_header: flipInX
+    post_body: fadeIn
     coll_header: fadeIn
     # Only for Pisces | Gemini.
     # sidebar: fadeInUp

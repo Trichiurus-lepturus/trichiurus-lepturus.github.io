@@ -1,0 +1,13 @@
+diff --git a/node_modules/@waline/hexo-next/index.js b/node_modules/@waline/hexo-next/index.js
+index dd7e59f..f42622f 100644
+--- a/node_modules/@waline/hexo-next/index.js
++++ b/node_modules/@waline/hexo-next/index.js
+@@ -58,7 +58,7 @@ hexo.extend.filter.register('theme_inject', (injects) => {
+     `
+   {% if post.comments and (is_post() or config.waline.commentCount) %}
+   <span class="post-meta-item">
+-    ${iconText('far fa-comment', 'waline')}
++    ${iconText('far fa-comment', 'comments')}
+     <a title="waline" href="{{ url_for(post.path) }}#waline" itemprop="discussionUrl">
+       <span class="post-comments-count waline-comment-count" data-path="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+     </a>

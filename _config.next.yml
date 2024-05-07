@@ -964,6 +964,9 @@ waline:
   #   - https://unpkg.com/@waline/emojis@1.0.1/tieba
     - https://unpkg.com/@waline/emojis@1.2.0/tw-emoji
 
+  # Search for Emoticons
+  search: false
+
   # Comment infomation, valid meta are nick, mail and link
   meta:
     - nick

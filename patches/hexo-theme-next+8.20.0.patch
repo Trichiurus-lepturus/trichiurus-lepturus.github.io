@@ -28,10 +28,10 @@ index 6ab3c6b..87ba54e 100644
        window.addEventListener('sidebar:hide', this.hideSidebar);
      },
 diff --git a/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js b/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
-index 92a264d..9785845 100644
+index 92a264d..a04f649 100644
 --- a/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
 +++ b/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
-@@ -67,13 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
+@@ -67,13 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
    window.addEventListener('search:loaded', inputEventFunction);
  
    // Handle and trigger popup window
@@ -51,7 +51,8 @@ index 92a264d..9785845 100644
 +    element.addEventListener('click', searchPopupClick);
 +  });
 +  document.addEventListener('keydown', (event) => {
-+    if (event.key === 's') {
++    if (!document.body.classList.contains('search-active') && event.ctrlKey && event.key === 's') {
++      event.preventDefault();
 +      searchPopupClick();
 +    }
    });

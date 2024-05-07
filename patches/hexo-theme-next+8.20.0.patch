@@ -58,3 +58,24 @@ index 92a264d..a04f649 100644
    });
  
    // Monitor main search box
+diff --git a/node_modules/hexo-theme-next/source/js/utils.js b/node_modules/hexo-theme-next/source/js/utils.js
+index ebd8552..d1ded37 100644
+--- a/node_modules/hexo-theme-next/source/js/utils.js
++++ b/node_modules/hexo-theme-next/source/js/utils.js
+@@ -199,6 +199,16 @@ NexT.utils = {
+         scrollTop: 0
+       });
+     });
++    document.addEventListener('keydown', (event) => {
++      if (!document.body.classList.contains('search-active') && event.key === 't') {
++        window.anime({
++          targets  : document.scrollingElement,
++          duration : 200,
++          easing   : 'linear',
++          scrollTop: 0
++        });
++      }
++    });
+   },
+ 
+   /**

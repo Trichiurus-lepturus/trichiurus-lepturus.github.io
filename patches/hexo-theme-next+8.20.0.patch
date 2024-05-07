@@ -12,7 +12,7 @@ index cffc669..52a6277 100644
      <span class="with-love">
        <i class="{{ theme.footer.icon.name }}"></i>
 diff --git a/node_modules/hexo-theme-next/source/js/sidebar.js b/node_modules/hexo-theme-next/source/js/sidebar.js
-index 6ab3c6b..87ba54e 100644
+index 6ab3c6b..5863807 100644
 --- a/node_modules/hexo-theme-next/source/js/sidebar.js
 +++ b/node_modules/hexo-theme-next/source/js/sidebar.js
 @@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +20,7 @@ index 6ab3c6b..87ba54e 100644
        document.querySelector('.sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
        document.querySelector('.sidebar-toggle').addEventListener('click', this.clickHandler.bind(this));
 +      document.addEventListener('keydown', (event) => {
-+        if (!document.body.classList.contains('search-active') && event.key === 'a') {
++        if (!document.body.classList.contains('search-active') && event.key === 'd') {
 +          this.clickHandler.bind(this)();
 +        }
 +      });

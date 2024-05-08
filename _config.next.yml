@@ -797,10 +797,10 @@ matomo:
 # Umami Analytics
 # See: https://umami.is/
 umami:
-  enable: false
-  script_url: # https://umami.example.com/script.js
-  website_id: # <your website id>
-  host_url: # <your umami site url>
+  enable: true
+  script_url: https://analytics.eu.umami.is/script.js
+  website_id: d181efbc-7fa5-42e1-99fd-9b9b9e4cba11
+  host_url: daiyu.host
 
 # Plausible Analytics
 # See: https://plausible.io/

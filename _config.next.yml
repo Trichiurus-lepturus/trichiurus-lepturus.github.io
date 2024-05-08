@@ -994,3 +994,6 @@ waline:
 
   # CloudFlare Turnstile
   turnstileKey: 0x4AAAAAAAZpcKa_pHRDYDuW
+
+  # TEX Renderer
+  texRenderer: "(blockMode, tex) => katex.renderToString(tex, { displayMode: blockMode, throwOnError: false })"

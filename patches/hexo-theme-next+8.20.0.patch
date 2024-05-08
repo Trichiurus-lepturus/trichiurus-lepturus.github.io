@@ -11,6 +11,18 @@ index cffc669..52a6277 100644
      <span itemprop="copyrightYear">{{ copyright_year }}</span>
      <span class="with-love">
        <i class="{{ theme.footer.icon.name }}"></i>
+diff --git a/node_modules/hexo-theme-next/layout/_partials/widgets.njk b/node_modules/hexo-theme-next/layout/_partials/widgets.njk
+index b312d0a..bf5d292 100644
+--- a/node_modules/hexo-theme-next/layout/_partials/widgets.njk
++++ b/node_modules/hexo-theme-next/layout/_partials/widgets.njk
+@@ -13,6 +13,7 @@
+   <div class="back-to-top" role="button" aria-label="{{ __('accessibility.back_to_top') }}">
+     <i class="fa fa-arrow-up fa-lg"></i>
+     <span>0%</span>
++    <span><code>M-a</code></span>
+   </div>
+ {%- endif %}
+ 
 diff --git a/node_modules/hexo-theme-next/source/js/sidebar.js b/node_modules/hexo-theme-next/source/js/sidebar.js
 index 6ab3c6b..ba5b3dd 100644
 --- a/node_modules/hexo-theme-next/source/js/sidebar.js
@@ -60,15 +72,15 @@ index 92a264d..a04f649 100644
  
    // Monitor main search box
 diff --git a/node_modules/hexo-theme-next/source/js/utils.js b/node_modules/hexo-theme-next/source/js/utils.js
-index ebd8552..7a62c23 100644
+index ebd8552..22d9f13 100644
 --- a/node_modules/hexo-theme-next/source/js/utils.js
 +++ b/node_modules/hexo-theme-next/source/js/utils.js
 @@ -199,6 +199,17 @@ NexT.utils = {
          scrollTop: 0
        });
      });
-+    document.addEventListener('keydown', (event) => {
-+      if (event.ctrlKey && event.key === 't') {
++    document.addEventListener('keydown', (event) => { 
++      if (event.altKey && event.key === 'a') {
 +        event.preventDefault();
 +        window.anime({
 +          targets  : document.scrollingElement,

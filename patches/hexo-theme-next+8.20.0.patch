@@ -32,6 +32,26 @@ index b312d0a..a09eec2 100644
    </div>
  {%- endif %}
  
+diff --git a/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl b/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl
+index 2b5273d..ef07d06 100644
+--- a/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl
++++ b/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl
+@@ -19,3 +19,15 @@
+ .sidebar-active .sidebar-toggle {
+   toggle-close($sidebar-toggle-alignment);
+ }
++
++.sidebar-hotkey-info {
++  display: inline-flex;
++  text-align: center;
++  bottom: 61px;
++  left: 60px;
++  height: 26px;
++  width: 36px;
++  opacity: 0.8;
++  position: fixed;
++  z-index: 30;
++}
 diff --git a/node_modules/hexo-theme-next/source/js/sidebar.js b/node_modules/hexo-theme-next/source/js/sidebar.js
 index 6ab3c6b..ba5b3dd 100644
 --- a/node_modules/hexo-theme-next/source/js/sidebar.js

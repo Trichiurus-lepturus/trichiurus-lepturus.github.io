@@ -47,7 +47,9 @@ jobs:
       #     key: ${{ runner.OS }}-npm-cache
       #     restore-keys: |
       #       ${{ runner.OS }}-npm-cache
-      - name: Install Dependencies
+      - name: Install pandoc for Mathjax
+        run: apt install pandoc
+      - name: Install Node.js Dependencies
         run: npm install
       - name: Patch Packages
         run: npx patch-package

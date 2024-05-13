@@ -23,6 +23,8 @@ nmcli device wifi connect <SSID or BSSID> [password <password>]
 nmcli connection show # show the connections
 ```
 
+<!-- more -->
+
 使用nmcli改用国内114DNS：
 ```bash
 sudo nmcli connection modify <connection> ipv4.dns "114.114.114.114,114.114.115.115"

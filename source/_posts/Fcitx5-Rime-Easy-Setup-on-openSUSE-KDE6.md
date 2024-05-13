@@ -20,6 +20,9 @@ openSUSE Tumbleweed \+ KDE Plasma 6 \+ Wayland
 sudo zypper ref
 sudo zypper in fcitx5 fcitx5-rime
 ```
+
+<!-- more -->
+
 注意到，[fcitx wiki](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE_Plasma)中提到在KDE下不要设置`QT_IM_MODULE`与`GTK_IM_MODULE`两个环境变量，
 而安装fcitx5和rime时一起安装的[systemd-inputmethod-generator](https://github.com/openSUSE-zh/systemd-inputmethod-generator)这个包会生成上述两个环境变量。
 

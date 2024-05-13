@@ -16,6 +16,8 @@ VSCode相对于Kate还是太重了（
 今天在使用Kate编辑Markdown文件时发现保存时会自动移除行末空格  
 行末两个空格是Markdown常用的段落内换行标志，当然我们希望Kate把它保留下来……
 
+<!-- more -->
+
 ## 解决
 搜索，在[kate-editor.org](https://kate-editor.org/2012/10/27/remove-trailing-spaces/)找到了解决方案  
 不过现在Remove trailing spaces选项并不会直接显示在设置界面上  

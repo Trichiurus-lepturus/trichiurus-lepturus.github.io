@@ -20,6 +20,8 @@ openSUSE Tumbleweed x86_64
 ## 目的
 把Docker镜像和容器都放在移动硬盘中，节省本机的空间
 
+<!-- more -->
+
 ## 前置条件
 1. 安装Docker（Docker Engine）
 ```bash

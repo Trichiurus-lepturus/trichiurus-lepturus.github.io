@@ -11,7 +11,8 @@ tags:
 ## 问题
 前两天深为.zip压缩包乱码问题所困。
 
-众所周知，Windows系统由于其复杂而沉重的历史包袱，直到现在也还在使用[代码页](https://learn.microsoft.com/zh-cn/windows/win32/intl/code-pages)提供多语言字符集支持。其中简中的GBK在Code page 936，而GB18030在Code page 54936。于是，如果在Windows中打.zip压缩包时不指定使用UTF-8编码，得到的压缩包中文件名便是GBK的。在Windows中压缩解压当然没有问题，但是……  
+众所周知，Windows系统由于其复杂而沉重的历史包袱，直到现在也还在使用[代码页](https://learn.microsoft.com/zh-cn/windows/win32/intl/code-pages)提供多语言字符集支持。其中简中的GBK在Code page 936，而GB18030在Code page 54936。  
+于是，如果在Windows中打.zip压缩包时不指定使用UTF-8编码，得到的压缩包中文件名便是GBK的。在Windows中压缩解压当然没有问题，但是……  
 当这个压缩包传到一个使用KDE桌面环境的Linux系统中，使用[Ark](https://apps.kde.org/ark/)打开它，一阵乱码便会扑面而来，令人头皮发麻。作为双系统用户当然可以切到Windows解压了再传回来，可平时干活都是在Linux，把系统切来切去真的很不方便。
 
 ## 弯路

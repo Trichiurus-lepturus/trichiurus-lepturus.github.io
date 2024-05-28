@@ -1,8 +1,10 @@
 ---
-title: 将Docker的文件装进移动固态硬盘
+title: 将Docker的文件装进移动固态硬盘，节约本机空间
 date: 2024-04-22 19:39:29
 tags:
   - Docker
+  - Virtualization/虚拟化
+  - openSUSE
 ---
 
 *选固态硬盘是因为固态硬盘相对比较快，其实机械硬盘也可以的。后文中称“移动硬盘”*

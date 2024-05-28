@@ -1,9 +1,10 @@
 ---
-title: openSUSE中补装KDE Plasma桌面环境
+title: openSUSE系统从TTY到KDE Plasma——联网、换源、安装与启动
 date: 2024-04-19 00:43:23
 tags:
   - KDE Plasma
-  - openSUSE Leap
+  - openSUSE
+  - TTY
 ---
 
 ## 声明

@@ -2,11 +2,11 @@
 title: 在KDE6中轻松安装并配置fcitx5-rime输入法
 date: 2024-05-01 09:26:19
 tags:
-  - openSUSE Tumbleweed
+  - openSUSE
   - KDE Plasma
   - Wayland
   - Fcitx5
-  - Rime
+  - Rime/中州韵
 ---
 
 ## 系统环境

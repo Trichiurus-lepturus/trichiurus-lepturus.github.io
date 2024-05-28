@@ -2,9 +2,9 @@
 title: 在openEuler中使用Termius TTY终端字体，改善视觉效果
 date: 2024-05-22 19:10:43
 tags:
-  - Font
+  - Font/字体
   - TTY
-  - openEuler
+  - openEuler/欧拉系统
 ---
 
 ## 概述

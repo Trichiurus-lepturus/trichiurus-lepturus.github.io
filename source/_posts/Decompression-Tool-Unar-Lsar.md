@@ -1,11 +1,11 @@
 ---
-title: 多功能解压工具unar和lsar——解压乱码问题的一种解决方案
+title: 多功能解压工具unar和lsar——zip解压乱码问题的一种解决方案
 date: 2024-05-22 01:30:01
 tags:
-  - Extract
-  - CLI Tool
-  - Mojibake
-  - Code Page
+  - Extract/解压
+  - CLI/命令行
+  - Mojibake/乱码
+  - Code Page/代码页
 ---
 
 ## 问题

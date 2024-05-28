@@ -1,9 +1,10 @@
 ---
-title: 不让Kate在保存Markdown文件时移除行末空格
+title: Kate配置：不让Kate在保存Markdown文件时移除行末空格
 date: 2024-04-28 07:14:58
 tags:
   - Kate
   - Markdown
+  - KDE
   - KDE Plasma
 ---
 

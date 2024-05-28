@@ -3,14 +3,16 @@ title: 【转载】例析青恋社"ELF Paradise"系列第一作简中翻译
 date: 2024-05-27 10:37:58
 tags:
   - DLsite
-  - Japanese
-  - Translation
+  - Japanese/日语
+  - Translation/翻译
 ---
 
 **原文作者“S-Expression”为本人。**  
 原文为于DLsite[RJ01197062](https://www.dlsite.com/maniax/work/=/product_id/RJ01197062.html)作品下发布的赏析。
 
 剧情、演出等都是过硬的,无需多言,这篇赏析重点想谈谈翻译。
+
+<!-- more -->
 
 青恋社提供了英、中(简、繁)、韩等多语言版本,在视频中添加对应语言的字幕,在海外市场上下足了功夫,值得点赞!
 

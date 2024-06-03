@@ -1,5 +1,5 @@
 ---
-title: 【转载】例析青恋社"ELF Paradise"系列第一作简中翻译
+title: 浅谈青恋社"ELF Paradise"系列第一作简中翻译
 date: 2024-05-27 10:37:58
 tags:
   - DLsite
@@ -8,7 +8,9 @@ tags:
 ---
 
 **原文作者“S-Expression”为本人。**  
-原文为于DLsite[RJ01197062](https://www.dlsite.com/maniax/work/=/product_id/RJ01197062.html)作品下发布的赏析。
+原文为于DLsite[RJ01197062](https://www.dlsite.com/maniax/work/=/product_id/RJ01197062.html)作品下发布的赏析；标题是后加的。
+
+正文：
 
 剧情、演出等都是过硬的,无需多言,这篇赏析重点想谈谈翻译。
 

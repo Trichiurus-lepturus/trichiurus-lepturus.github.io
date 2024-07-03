@@ -3,6 +3,7 @@ title: 浅谈青恋社"ELF Paradise"系列第一作简中翻译
 date: 2024-05-27 10:37:58
 tags:
   - DLsite
+  - Language/语言
   - Japanese/日语
   - Translation/翻译
 ---

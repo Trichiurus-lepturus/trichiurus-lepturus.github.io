@@ -14,7 +14,7 @@ tags:
 尝试使用rEFInd，启动时卡在Initializing，上网一搜从上到下几乎清一色HP电脑，这与我的机器品牌相同，猜测此问题与硬件有关，遂放弃使用rEFInd。
 
 ## Limine
-注意到引导加载程序[Limine](https://limine-bootloader.org/)。
+注意到引导加载程序[Limine](https://limine-bootloader.org/)可以满足多系统引导需求，使用方法也较为简单清晰，故决定选择使用之。
 
 <!-- more -->
 
@@ -48,7 +48,8 @@ efibootmgr --create --disk=<esp_disk> --part=<esp_part> --label="Limine" --loade
     protocol: efi_chainload
     image_path: uuid(xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx):/EFI/opensuse/grubx64.efi
 ```
-其中`/`表示新启动项的开始，Leap为启动项的名称，协议选择`efi_chainload`表示打开另一个EFI文件，路径使用uuid确定分区，分隔符可以使用正斜杠。  
+其中`/`表示新启动项的开始，Leap为启动项的名称，协议选择`efi_chainload`表示打开另一个EFI文件，路径使用uuid确定分区，分隔符可以使用正斜杠。
+特别注意，“分区的UUID”有`UUID`和`PARTUUID`两种，其中Limine使用的是PARTUUID。  
 更多配置项根据`CONFIG.md`编写即可。特别注意，Limine使用的路径包括分区与分区内路径两部分，应认真阅读Path一节。  
 可以在[Arch Wiki](https://wiki.archlinux.org/title/Limine#Configuration)找到一个使用linux协议的例子，供参考。
 

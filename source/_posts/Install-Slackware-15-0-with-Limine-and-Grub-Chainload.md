@@ -163,7 +163,7 @@ Slackware的安装程序`setup`自带的解释十分详细，根据实际情况�
 
 ## 建立系统引导、编写`fstab`文件
 退出`setup`时选择`Shell`以进行接下来的工作。目标系统现挂载于`/mnt`目录下，可以使用`chroot`进入。  
-进入后，编写[`fstab`](https://wiki.archlinux.org/title/Fstab)，安装[`grub`](https://wiki.archlinux.org/title/GRUB)，建立一套引导机制。
+进入后，编写[fstab](https://wiki.archlinux.org/title/Fstab)，安装[grub](https://wiki.archlinux.org/title/GRUB)，建立一套引导机制。
 首先进入`chroot`环境并使用bash（使用其他shell也可以，只要系统自带）：
 ```bash
 chroot /mnt /bin/bash
@@ -188,7 +188,7 @@ ls /boot/efi/EFI/<desired_id>
 grub-mkconfig --help
 grub-mkconfig --output=/boot/grub/grub.cfg
 ```
-这个`grub`将用于启动Slackware的内核，而多系统引导笔者使用[`Limine`](https://github.com/limine-bootloader/limine)，
+这个`grub`将用于启动Slackware的内核，而多系统引导笔者使用[Limine](https://github.com/limine-bootloader/limine)，
 用`efi_chainload`功能选择进入的操作系统。所以需要将Slackware的有关内容写入`limine.conf`，并使用`efibootmgr`将Limine置于首位。
 ```bash
 vim <conf_path>/limine.conf
@@ -198,9 +198,9 @@ efibootmgr -o XXXX,...
 ```
 
 ## 添加普通用户、加入`sudoers`文件
-在Slackware可以使用[`adduser`](https://www.slackbook.org/html/essential-sysadmin.html)脚本添加用户，根据提示操作即可，
+在Slackware可以使用[adduser](https://www.slackbook.org/html/essential-sysadmin.html)脚本添加用户，根据提示操作即可，
 记得为其添加密码；如果此用户需要一些系统管理员权限，或为个人使用方便起见，建议在Additional UNIX groups这一步骤添加`wheel`用户组。  
-使用[`visudo`](https://www.sudo.ws/docs/man/visudo.man/)编辑`sudoers`文件，操作逻辑与`vi`相同，
+使用[visudo](https://www.sudo.ws/docs/man/visudo.man/)编辑`sudoers`文件，操作逻辑与`vi`相同，
 笔者选择了取消注释`# %wheel ALL=(ALL:ALL) ALL`一行，赋予所有`wheel`用户组成员使用`sudo`的权限。  
 值得注意的是，`sudo`环境中一些环境变量会被重设，在`visudo`找到“env_reset”和“env_keep”有关内容并根据提示进行编辑即可；
 另外可以为`sudo`环境设置专用的`PATH`环境变量，找到“secure_path”有关内容并根据提示进行编辑即可。

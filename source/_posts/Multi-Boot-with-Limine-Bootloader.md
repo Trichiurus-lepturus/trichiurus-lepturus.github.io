@@ -48,8 +48,8 @@ efibootmgr --create --disk=<esp_disk> --part=<esp_part> --label="Limine" --loade
     protocol: efi_chainload
     image_path: uuid(xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx):/EFI/opensuse/grubx64.efi
 ```
-其中`/`表示新启动项的开始，Leap为启动项的名称，协议选择`efi_chainload`表示打开另一个EFI文件，路径使用uuid确定分区，分隔符可以使用正斜杠。
-特别注意，“分区的UUID”有`UUID`和`PARTUUID`两种，其中Limine使用的是PARTUUID。  
+其中`/`表示新启动项的开始，“Leap”为启动项的名称，协议选择`efi_chainload`表示打开另一个EFI文件，路径使用uuid确定分区，分隔符可以使用正斜杠。
+特别注意，“分区的UUID”有`UUID`（文件系统UUID）和`PARTUUID`（硬盘分区UUID）两种，其中Limine使用的是`PARTUUID`。  
 更多配置项根据`CONFIG.md`编写即可。特别注意，Limine使用的路径包括分区与分区内路径两部分，应认真阅读Path一节。  
 可以在[Arch Wiki](https://wiki.archlinux.org/title/Limine#Configuration)找到一个使用linux协议的例子，供参考。
 

@@ -52,11 +52,11 @@ jobs:
       - name: Install Node.js Dependencies
         run: yarn
       - name: Patch Packages
-        run: yarn dlx patch-package
+        run: yarn patch-package
       - name: Hexo clean
-        run: yarn dlx hexo clean
+        run: yarn hexo clean
       - name: Build with Hexo
-        run: yarn dlx hexo generate
+        run: yarn hexo generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

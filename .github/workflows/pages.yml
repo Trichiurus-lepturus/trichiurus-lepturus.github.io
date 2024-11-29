@@ -50,13 +50,13 @@ jobs:
       - name: Install pandoc for Mathjax
         run: sudo apt install pandoc
       - name: Install Node.js Dependencies
-        run: npm install
+        run: yarn
       - name: Patch Packages
-        run: npx patch-package
+        run: yarn dlx patch-package
       - name: Hexo clean
-        run: npx hexo clean
+        run: yarn dlx hexo clean
       - name: Build with Hexo
-        run: npx hexo generate
+        run: yarn dlx hexo generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

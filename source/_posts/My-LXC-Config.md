@@ -145,7 +145,7 @@ lxc.environment = https_proxy=
 lxc.environment = socks_proxy=
 ```
 
-创建并进入容器，其中`--template download`意为从(LXC Images)[https://images.linuxcontainers.org/]这个列表中获取镜像，依次输入发行版、版本号、CPU架构即可：
+创建并进入容器，其中`--template download`意为从[LXC Images](https://images.linuxcontainers.org/)这个列表中获取镜像，依次输入发行版、版本号、CPU架构即可：
 ```bash
 lxc-create --name <container_name> --config /etc/lxc/<conf_name>.conf --template download
 lxc-start --name <container_name>

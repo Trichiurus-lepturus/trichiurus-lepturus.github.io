@@ -1,5 +1,5 @@
 ---
-title: 配置LXC，创建NAT、DNS、SSH
+title: 从零开始，使用LXC构建开发容器，配置NAT、DNS与SSH
 date: 2025-02-17 06:34:44
 tags:
   - LXC (Linux Containers)

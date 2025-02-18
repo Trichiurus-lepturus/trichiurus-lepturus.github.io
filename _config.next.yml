@@ -967,6 +967,9 @@ waline:
   # Search for Emoticons
   search: false
 
+  # Reaction Function
+  reaction: false
+
   # Comment infomation, valid meta are nick, mail and link
   meta:
     - nick

@@ -1,5 +1,5 @@
 ---
-title: openSUSE系统从TTY到KDE Plasma——联网、换源、安装与启动
+title: 从TTY到KDE Plasma——联网、换源、安装与启动（以openSUSE Leap为例）
 date: 2024-04-19 00:43:23
 tags:
   - KDE Plasma

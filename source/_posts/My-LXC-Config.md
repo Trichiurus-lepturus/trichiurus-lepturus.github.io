@@ -1,5 +1,5 @@
 ---
-title: 从零开始，使用LXC构建开发容器，配置NAT、DNS与SSH
+title: 从零开始：使用LXC构建开发容器，配置NAT、DNS与SSH（以openSUSE Tumbleweed为例）
 date: 2025-02-17 06:34:44
 tags:
   - LXC (Linux Containers)
@@ -122,17 +122,22 @@ systemctl start dnsmasq
 systemctl enable dnsmasq
 ```
 
-## 准备进入容器
+## 编辑容器配置文件；创建并进入容器
 
 参考[Manpage](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)，
-开始为容器配置静态IP地址、环境变量，并启动容器：
+可先将配置文件拷贝一份出来，作为创建容器时使用配置文件：
 ```bash
 cp /etc/lxc/unprivileged.conf /etc/lxc/<conf_name>.conf
 ```
 
+为容器分配的ipv4地址必须是空闲的，其中`ip_prefix`需与`lxcbr0`中的保持一致；  
+若需要ipv6地址也可以进行分配，对应的配置项分别为`lxc.net.0.ipv6.address`与`lxc.net.0.ipv6.gateway`；  
+此处将`apparmor.profile`设置为`unconfined`是出于实践需要，且作为一个开发环境无须启用之；  
+将与网络代理有关的环境变量设为全部不走代理，是因为LXC默认从宿主机继承所有环境变量，但容器通过网桥上网无需经过代理。
+
 向`<conf_name>.conf`中**追加写入**以下内容：
 ```plain
-lxc.net.0.ipv4.address = <ip_prefix>.2/24
+lxc.net.0.ipv4.address = <ip_prefix>.<ip_suffix>/24
 lxc.net.0.ipv4.gateway = <ip_prefix>.1
 lxc.apparmor.profile = unconfined
 lxc.environment = NO_PROXY=localhost,127.0.0.1,::1,0.0.0.0,*
@@ -152,7 +157,7 @@ lxc-start --name <container_name>
 lxc-attach --name <container_name>
 ```
 
-容器创建完成后，其配置文件在宿主机中仍可以进行读写，修改的部分在容器重启后生效，路径为：`/var/lib/lxc/<container_name>/config`
+容器创建完成后，其配置文件在宿主机中仍可以进行读写，修改的部分在容器重启后生效，路径为：**`/var/lib/lxc/<container_name>/config`**
 
 所有的LXC命令都是以“lxc-”开头的，而形如“lxc 空格 子命令”的格式为LXD独有，并不在本文讨论范围内。
 命令用法可以参考[Manpages](https://linuxcontainers.org/lxc/manpages/)。
@@ -202,7 +207,7 @@ passwd
 
 容器并不通过如`multi-user.target`这样的systemd服务目标来启动，
 所以`sshd`自启动需要用到LXC提供的钩子[`lxc.hook.start`](https://linuxcontainers.org/lxc/manpages/man5/lxc.container.conf.5.html#:~:text=A%20hook%20to%20be%20run%20in%20the%20container's%20namespace%20immediately%20before%20executing%20the%20container's%20init.%20This%20requires%20the%20program%20to%20be%20available%20in%20the%20container.)。
-仿照`sshd.service`，在容器中创建一个脚本启动`sshd`：
+仿照`sshd.service`，在**容器内部**创建一个脚本启动`sshd`：
 ```bash
 #!/bin/bash
 source /etc/sysconfig/ssh
@@ -215,6 +220,7 @@ nohup /usr/sbin/sshd -D $SSHD_OPTS > /var/log/sshd.log 2>&1 &
 ```plain
 lxc.hook.start = <script_path>
 ```
+其中`script_path`为容器内脚本的路径。
 
 ## 在宿主机关机时自动停止所有LXC容器
 

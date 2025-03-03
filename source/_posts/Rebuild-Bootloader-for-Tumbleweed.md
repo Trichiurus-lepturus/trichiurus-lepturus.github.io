@@ -25,6 +25,8 @@ lsblk # find the system partition nvmeXnYpZ
 mount -o subvol=@ /dev/nvmeXnYpZ /mnt
 ```
 
+<!-- more -->
+
 3. 挂载必要的系统环境组件：
 ```bash
 mount -t proc /proc /mnt/proc

@@ -8,6 +8,3 @@ mathjax: true
 $$
 i \hbar \frac{\partial}{\partial t} \vert \Psi (t) \rangle = \hat{H} \vert \Psi (t) \rangle
 $$
-
-*Recent works:*
-- https://github.com/Trichiurus-lepturus/BeltFishThoughts

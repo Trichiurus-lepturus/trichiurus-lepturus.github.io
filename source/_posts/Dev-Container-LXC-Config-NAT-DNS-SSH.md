@@ -171,6 +171,7 @@ lxc-attach --name <container_name>
 ```bash
 # in container
 sed -i 's/^NETCONFIG_DNS_POLICY="auto"/NETCONFIG_DNS_POLICY=""/' /etc/sysconfig/network/config
+rm /etc/resolv.conf
 echo "nameserver <ip_prefix>.1" > /etc/resolv.conf
 ```
 

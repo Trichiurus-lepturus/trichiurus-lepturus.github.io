@@ -207,7 +207,13 @@ passwd
 
 容器并不通过如`multi-user.target`这样的systemd服务目标来启动，
 所以`sshd`自启动需要用到LXC提供的钩子[`lxc.hook.start`](https://linuxcontainers.org/lxc/manpages/man5/lxc.container.conf.5.html#:~:text=A%20hook%20to%20be%20run%20in%20the%20container's%20namespace%20immediately%20before%20executing%20the%20container's%20init.%20This%20requires%20the%20program%20to%20be%20available%20in%20the%20container.)。
-仿照`sshd.service`，在**容器内部**创建一个脚本启动`sshd`：
+仿照`sshd.service`，在**容器内部**创建一个脚本，以启动`sshd`：
+```bash
+# in container
+nano <sshd_script_path>
+```
+
+脚本内容如下：
 ```bash
 #!/bin/bash
 source /etc/sysconfig/ssh
@@ -216,17 +222,27 @@ source /etc/sysconfig/ssh
 nohup /usr/sbin/sshd -D $SSHD_OPTS > /var/log/sshd.log 2>&1 &
 ```
 
+不要忘了为这个脚本添加执行权限：
+```bash
+# in container
+chmod +x <sshd_script_path>
+```
+
 在宿主机的容器配置文件（`/var/lib/lxc/<container_name>/config`）中加入以下内容：
 ```plain
-lxc.hook.start = <script_path>
+lxc.hook.start = <sshd_script_path>
 ```
-其中`script_path`为容器内脚本的路径。
 
 ## 在宿主机关机时自动停止所有LXC容器
 
 有LXC容器运行时直接关机将导致关机速度缓慢，且可能导致容器处于不正确的状态。
 为解决此问题，可以注册一个systemd服务，运行脚本来停止所有运行中容器。  
-先写关闭所有运行中LXC容器的脚本：
+先在宿主机中创建一个脚本，以关闭所有运行中的LXC容器：
+```bash
+nano <stop_script_path>
+```
+
+脚本内容如下：
 ```bash
 #!/bin/bash
 
@@ -256,7 +272,7 @@ Before=shutdown.target reboot.target halt.target poweroff.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/stop_all_lxc.sh
+ExecStart=<stop_script_path>
 
 [Install]
 WantedBy=shutdown.target

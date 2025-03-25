@@ -11,14 +11,14 @@ tags:
 
 ## 需求
 最近有时需要启动U盘中的系统，每次使用BIOS来选择启动项深感不便，故想到找一款好用的多系统引导工具。  
-尝试使用rEFInd，启动时卡在Initializing，上网一搜从上到下几乎清一色HP电脑，这与我的机器品牌相同，猜测此问题与硬件有关，遂放弃使用rEFInd。
+尝试使用rEFInd，启动时卡在Initializing，上网一搜从上到下几乎清一色HP电脑，这与笔者的机器品牌相同，猜测此问题与硬件有关，遂放弃使用rEFInd。
 
 ## Limine
 注意到引导加载程序[Limine](https://limine-bootloader.org/)可以满足多系统引导需求，使用方法也较为简单清晰，故决定选择使用之。
 
 <!-- more -->
 
-（说实话Limine的界面比rEFInd更符合我个人的口味
+（说实话Limine的界面比rEFInd更符合笔者个人的口味
 
 ### 安装
 参考其[README](https://github.com/limine-bootloader/limine/blob/v8.x/README.md)，下载安装二进制：
@@ -28,7 +28,7 @@ cd limine
 make install # this need root privileges
 ```
 继续参考[USAGE](https://github.com/limine-bootloader/limine/blob/v8.x/USAGE.md)，
-由于我使用UEFI引导模式，将`BOOT*.EFI`（\*为架构）文件拷贝至ESP（EFI System Partition）分区的`/EFI/BOOT`目录下，
+由于笔者使用UEFI引导模式，将`BOOT*.EFI`（\*为架构）文件拷贝至ESP（EFI System Partition）分区的`/EFI/BOOT`目录下，
 再使用`efibootmgr`将`BOOT*.EFI`添加为引导项即可完成此步骤。  
 那么`BOOT*.EFI`在哪里呢？注意`make install`的输出，不难发现在`/usr/local/share/limine/`。
 这个路径也可以修改，`make install PREFIX=<prefix>`即可指定输出目录前缀。

@@ -1,3 +1,20 @@
+diff --git a/node_modules/hexo-theme-next/layout/_macro/post.njk b/node_modules/hexo-theme-next/layout/_macro/post.njk
+index e297189..8a38407 100644
+--- a/node_modules/hexo-theme-next/layout/_macro/post.njk
++++ b/node_modules/hexo-theme-next/layout/_macro/post.njk
+@@ -49,6 +49,12 @@
+           {%- endif %}
+         </{% if is_index %}h2{% else %}h1{% endif %}>
+ 
++        {%- if post.subtitle and not is_index %}
++          <h1 class="post-subtitle">
++            〜{{ post.subtitle }}〜
++          </h1>
++        {%- endif %}
++
+         <div class="post-meta-container">
+           {{ partial('_partials/post/post-meta.njk') }}
+ 
 diff --git a/node_modules/hexo-theme-next/layout/_partials/footer.njk b/node_modules/hexo-theme-next/layout/_partials/footer.njk
 index cffc669..52a6277 100644
 --- a/node_modules/hexo-theme-next/layout/_partials/footer.njk
@@ -32,6 +49,43 @@ index b312d0a..a09eec2 100644
    </div>
  {%- endif %}
  
+diff --git a/node_modules/hexo-theme-next/source/css/_common/components/post/post-header.styl b/node_modules/hexo-theme-next/source/css/_common/components/post/post-header.styl
+index f9f6e43..8e54cf8 100644
+--- a/node_modules/hexo-theme-next/source/css/_common/components/post/post-header.styl
++++ b/node_modules/hexo-theme-next/source/css/_common/components/post/post-header.styl
+@@ -30,6 +30,32 @@
+   }
+ }
+ 
++.posts-expand .post-subtitle {
++  font-size: $font-size-large;
++  font-weight: normal;
++  margin: initial;
++  word-wrap();
++
++  if (hexo-config('post_edit.enable')) {
++    .post-edit-link {
++      border-bottom: 0;
++      color: $grey;
++      float: right;
++      font-size: $font-size-small;
++      margin-left: -1.2em;
++      transition: color $transition-ease-in;
++
++      +mobile-small() {
++        margin-left: initial;
++      }
++
++      &:hover {
++        color: $sidebar-highlight;
++      }
++    }
++  }
++}
++
+ .posts-expand .post-title-link {
+   border-bottom: 0;
+   color: var(--link-color);
 diff --git a/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl b/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl
 index 2b5273d..ef07d06 100644
 --- a/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl

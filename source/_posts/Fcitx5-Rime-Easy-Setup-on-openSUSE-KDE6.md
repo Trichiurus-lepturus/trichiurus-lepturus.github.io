@@ -1,5 +1,6 @@
 ---
 title: 在KDE6中轻松安装并配置fcitx5-rime输入法
+subtitle: 利用“东风破”与“雾凇拼音”项目
 date: 2024-05-01 09:26:19
 tags:
   - openSUSE
@@ -13,7 +14,7 @@ tags:
 openSUSE Tumbleweed \+ KDE Plasma 6 \+ Wayland
 
 ## 安装fcitx5-rime并启用
-我的操作系统是英文操作系统（为了在tty中不用配置中文补丁也能够正常显示终端输出信息）。  
+笔者的操作系统是英文操作系统（为了在tty中不用配置中文补丁也能够正常显示终端输出信息）。  
 中文的openSUSE预装了`ibus`和`fcitx`两种输入框架,请只保留一个或都删掉并安装`fcitx5`  
 以英文系统安装`fcitx5-rime`为例：
 ```bash
@@ -53,7 +54,7 @@ cd plum
 > ——来自https://dvel.me/posts/rime-ice
 
 由于plum默认ibus框架，本文使用fcitx5框架，使用时要注意指定环境变量`rime_frontend=fcitx5-rime`  
-以安装完整配置以及启用小鹤双拼（非小鹤音形，小鹤音形我没学）为例：
+以安装完整配置以及启用小鹤双拼（非小鹤音形，小鹤音形笔者不会用）为例：
 ```bash
 # in plum dir
 rime_frontend=fcitx5-rime ./rime-install iDvel/rime-ice:others/recipes/full

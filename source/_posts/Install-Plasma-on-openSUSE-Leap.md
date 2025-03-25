@@ -1,5 +1,6 @@
 ---
-title: 从TTY到KDE Plasma——联网、换源、安装与启动（以openSUSE Leap为例）
+title: 从TTY到KDE Plasma——联网、换源、安装与启动
+subtitle: 以openSUSE Leap为例
 date: 2024-04-19 00:43:23
 tags:
   - KDE Plasma
@@ -8,8 +9,8 @@ tags:
 ---
 
 ## 声明
-*我的机器没有NVIDIA显卡，所以将不包含任何有关显卡驱动安装的操作*  
-openSUSE自带的显卡驱动于我已经足够好用
+*笔者的机器没有NVIDIA显卡，所以将不包含任何有关显卡驱动安装的操作*  
+openSUSE自带的显卡驱动于笔者已经足够好用
 
 ## 操作系统
 openSUSE Leap 15.5, 安装时System Role选择**Server**
@@ -79,7 +80,7 @@ sudo reboot
 
 ## 补充：应对PackageKit卡住zypper的问题
 \*KDE Plasma桌面应用中有一个东西叫做PackageKit，经常自己检查更新，此时运行zypper会提示被PackageKit屏蔽。
-我的选择是移除PackageKit并不让它再被安装上我的操作系统：
+笔者的选择是移除PackageKit并不让它再被安装上笔者的操作系统：
 ```bash
 sudo zypper rm PackageKit
 sudo zypper al PackageKit

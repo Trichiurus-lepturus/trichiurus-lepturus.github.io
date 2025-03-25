@@ -1,5 +1,6 @@
 ---
-title: 多功能解压工具unar和lsar——zip解压乱码问题的一种解决方案
+title: 多功能解压工具unar和lsar简介
+subtitle: 解压zip文件出现乱码问题的一种解决方案
 date: 2024-05-22 01:30:01
 tags:
   - Extract/解压
@@ -25,5 +26,3 @@ tags:
 偶然间在openSUSE中文论坛的[一篇帖子](https://forum.suse.org.cn/t/topic/16477/5)，了解到了[`unar`](https://theunarchiver.com/command-line)解压工具，可解压[多种格式的压缩文件](https://theunarchiver.com/#:~:text=Supported%20archive%20formats)。此外，最重要的（也是本文最关心的）功能，它能自动识别文件名的编码并解压；如果自动识别失效，还可以用`-e`参数指定编码。详细的用法可以使用`man unar`查看；另有`lsar`工具，可不解压查看压缩包的内容。
 
 在openSUSE Tumbleweed中可以使用`sudo zypper in unar`安装`unar`和`lsar`。笔者使用自动检测功能解压了几个GBK编码的压缩包及几个Shift-JIS编码的压缩包，乱码问题解决得相当好。
-
-\*说到这，那就再骂一骂难绷的代码页吧（笑

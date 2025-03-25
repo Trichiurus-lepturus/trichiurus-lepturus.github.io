@@ -1,5 +1,6 @@
 ---
-title: 从零开始：使用LXC构建开发容器，配置NAT、DNS与SSH（以openSUSE Tumbleweed为例）
+title: 从零开始：使用LXC构建开发容器，配置NAT、DNS与SSH
+subtitle: 以openSUSE Tumbleweed为例
 date: 2025-02-17 06:34:44
 tags:
   - LXC (Linux Containers)

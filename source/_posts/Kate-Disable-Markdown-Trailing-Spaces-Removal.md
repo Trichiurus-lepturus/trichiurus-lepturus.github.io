@@ -1,5 +1,5 @@
 ---
-title: Kate配置：不让Kate在保存Markdown文件时移除行末空格
+title: KDE Kate配置：不让Kate在保存Markdown文件时移除行末空格
 date: 2024-04-28 07:14:58
 tags:
   - Kate
@@ -15,7 +15,7 @@ Kate版本：kate 24.02.2
 VSCode相对于Kate还是太重了（
 
 今天在使用Kate编辑Markdown文件时发现保存时会自动移除行末空格  
-行末两个空格是Markdown常用的段落内换行标志，当然我们希望Kate把它保留下来……
+行末两个空格是Markdown常用的段落内换行标志，当然笔者们希望Kate把它保留下来……
 
 <!-- more -->
 

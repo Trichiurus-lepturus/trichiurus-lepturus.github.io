@@ -175,11 +175,17 @@ rm /etc/resolv.conf
 echo "nameserver <ip_prefix>.1" > /etc/resolv.conf
 ```
 
-## 配置SSH
+## 配置SSH（公钥登录）
 
-### 安装openssh-server
+### 安装[openssh](https://www.openssh.com/)
 
-以openSUSE Leap为例，下载并安装有关组件，而后修改配置文件：
+在宿主机下载并安装`openssh-clients`：
+```bash
+# at host
+zypper in openssh-clients
+```
+
+在容器内下载并安装`openssh-server`，并安装一个文本编辑器以修改配置文件：
 ```bash
 # in container
 zypper up # maybe configure zypper mirrors first
@@ -188,22 +194,37 @@ zypper in nano openssh-server # install vim if preferred
 
 ### 编辑sshd_config配置文件
 
-在`/etc/ssh/sshd_config`中，将对应配置项修改为以下内容：
+找到容器内的配置文件`/etc/ssh/sshd_config`，将对应行修改为以下内容：
 ```plain
 Port <preferred_port>
 PermitRootLogin yes
 PubkeyAuthentication yes
-PasswordAuthentication yes
 AllowTcpForwarding yes
 ```
 
-### 设置容器登录密码
+### 设置容器root密码
 
-要使用密码登录容器，[可用`passwd`命令](https://www.geeksforgeeks.org/passwd-command-in-linux-with-examples/)设置一个密码：
+在拷贝公钥之前，应用[`passwd`](https://www.geeksforgeeks.org/passwd-command-in-linux-with-examples/)为容器的`root`用户设置一个密码：
 ```bash
 # in container
 passwd
 ```
+
+### 在宿主机生成密钥对
+如果宿主机目前还没有生成过密钥对，可用`ssh-keygen`生成一个密钥对，如采用[`ed25519`](https://ed25519.cr.yp.to/)算法：
+```bash
+# at host
+ssh-keygen -t ed25519 -C <comment>
+```
+若决定采用默认配置，运行命令后只需连敲三个回车即可生成密钥对，其中公钥文件路径为`~/.ssh/id_ed25519.pub`。
+
+### 拷贝公钥至容器内
+现使用`ssh-copy-id`拷贝公钥到容器中，输入目标用户`root`的密码验证身份：
+```bash
+# at host
+ssh-copy-id -p <preferred_port> -i ~/.ssh/id_ed25519.pub root@<container_ip>
+```
+此时应当能够免输密码登录容器了。
 
 ### 利用hook令sshd自启
 

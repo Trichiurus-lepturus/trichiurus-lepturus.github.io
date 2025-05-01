@@ -1,5 +1,5 @@
 ---
-title: 使用Limine Bootloader建立多系统（包括双系统）引导
+title: 使用Limine Bootloader优雅建立多系统（包括双系统）引导
 date: 2024-11-06 20:24:54
 tags:
   - Dual Boot/双系统

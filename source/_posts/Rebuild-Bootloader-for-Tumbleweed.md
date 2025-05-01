@@ -2,7 +2,7 @@
 title: 简记为Linux重建grub启动引导的步骤
 date: 2025-03-03 07:54:48
 tags:
-  - Bootstrap / 启动引导
+  - Bootstrap/启动引导
   - Grub
   - UEFI
 ---

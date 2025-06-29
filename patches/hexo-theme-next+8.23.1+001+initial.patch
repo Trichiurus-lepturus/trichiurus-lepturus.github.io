@@ -1,5 +1,5 @@
 diff --git a/node_modules/hexo-theme-next/layout/_macro/post.njk b/node_modules/hexo-theme-next/layout/_macro/post.njk
-index e297189..8a38407 100644
+index 304726c..1460c35 100644
 --- a/node_modules/hexo-theme-next/layout/_macro/post.njk
 +++ b/node_modules/hexo-theme-next/layout/_macro/post.njk
 @@ -49,6 +49,12 @@
@@ -15,21 +15,8 @@ index e297189..8a38407 100644
          <div class="post-meta-container">
            {{ partial('_partials/post/post-meta.njk') }}
  
-diff --git a/node_modules/hexo-theme-next/layout/_partials/footer.njk b/node_modules/hexo-theme-next/layout/_partials/footer.njk
-index cffc669..52a6277 100644
---- a/node_modules/hexo-theme-next/layout/_partials/footer.njk
-+++ b/node_modules/hexo-theme-next/layout/_partials/footer.njk
-@@ -13,7 +13,7 @@
- {%- if theme.footer.copyright !== false %}
-   <div class="copyright">
-     {%- set copyright_year = date(null, 'YYYY') %}
--    &copy; {% if theme.footer.since and theme.footer.since != copyright_year %}{{ theme.footer.since }} – {% endif %}
-+    <span class="copyright-to-rotate">&copy;</span> {% if theme.footer.since and theme.footer.since != copyright_year %}{{ theme.footer.since }} – {% endif %}
-     <span itemprop="copyrightYear">{{ copyright_year }}</span>
-     <span class="with-love">
-       <i class="{{ theme.footer.icon.name }}"></i>
 diff --git a/node_modules/hexo-theme-next/layout/_partials/widgets.njk b/node_modules/hexo-theme-next/layout/_partials/widgets.njk
-index b312d0a..9336ddc 100644
+index b312d0a..b9e3efa 100644
 --- a/node_modules/hexo-theme-next/layout/_partials/widgets.njk
 +++ b/node_modules/hexo-theme-next/layout/_partials/widgets.njk
 @@ -7,12 +7,16 @@
@@ -37,7 +24,7 @@ index b312d0a..9336ddc 100644
    </div>
    <div class="sidebar-dimmer"></div>
 +  <div class="sidebar-hotkey-info">
-+    <code>C-d</code>
++    <code>CTRL+D</code>
 +  </div>
  {%- endif %}
  
@@ -45,7 +32,7 @@ index b312d0a..9336ddc 100644
    <div class="back-to-top" role="button" aria-label="{{ __('accessibility.back_to_top') }}">
      <i class="fa fa-arrow-up fa-lg"></i>
      <span>0%</span>
-+    <span><code>C-a</code></span>
++    <span><code>CTRL+A</code></span>
    </div>
  {%- endif %}
  
@@ -87,25 +74,26 @@ index a5f9184..7a4d0fb 100644
    border-bottom: 0;
    color: var(--link-color);
 diff --git a/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl b/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl
-index 2b5273d..ef07d06 100644
+index 2b5273d..a2b5eee 100644
 --- a/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl
 +++ b/node_modules/hexo-theme-next/source/css/_common/outline/sidebar/sidebar-toggle.styl
-@@ -19,3 +19,15 @@
+@@ -19,3 +19,16 @@
  .sidebar-active .sidebar-toggle {
    toggle-close($sidebar-toggle-alignment);
  }
 +
 +.sidebar-hotkey-info {
-+  display: inline-flex;
-+  text-align: center;
 +  bottom: 61px;
-+  left: 60px;
-+  height: 26px;
-+  width: 36px;
-+  opacity: 0.8;
++  height: 16px;
++  padding: 5px;
++  background: transparent;
 +  position: fixed;
 +  z-index: 30;
++  left: 60px;
++  display: inline-flex;
++  align-items: center;
 +}
++
 diff --git a/node_modules/hexo-theme-next/source/js/sidebar.js b/node_modules/hexo-theme-next/source/js/sidebar.js
 index 3c49861..535b0eb 100644
 --- a/node_modules/hexo-theme-next/source/js/sidebar.js
@@ -124,10 +112,22 @@ index 3c49861..535b0eb 100644
        window.addEventListener('sidebar:hide', this.hideSidebar);
      },
 diff --git a/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js b/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
-index 1241f92..b5f5ac3 100644
+index d08e119..37530e9 100644
 --- a/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
 +++ b/node_modules/hexo-theme-next/source/js/third-party/search/local-search.js
-@@ -55,13 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
+@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
+     return;
+   }
+   const localSearch = new LocalSearch({
+-    path             : CONFIG.path,
++    path: CONFIG.path,
+     top_n_per_article: CONFIG.localsearch.top_n_per_article,
+-    unescape         : CONFIG.localsearch.unescape
++    unescape: CONFIG.localsearch.unescape
+   });
+ 
+   const input = document.querySelector('.search-input');
+@@ -55,14 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
    window.addEventListener('search:loaded', inputEventFunction);
  
    // Handle and trigger popup window
@@ -139,6 +139,7 @@ index 1241f92..b5f5ac3 100644
 +  }
    document.querySelectorAll('.popup-trigger').forEach(element => {
 -    element.addEventListener('click', () => {
+-      NexT.utils.setGutter();
 -      document.body.classList.add('search-active');
 -      // Wait for search-popup animation to complete
 -      setTimeout(() => input.focus(), 500);
@@ -155,10 +156,10 @@ index 1241f92..b5f5ac3 100644
  
    // Monitor main search box
 diff --git a/node_modules/hexo-theme-next/source/js/utils.js b/node_modules/hexo-theme-next/source/js/utils.js
-index 5803d7d..e4e6043 100644
+index 966a320..39ffb54 100644
 --- a/node_modules/hexo-theme-next/source/js/utils.js
 +++ b/node_modules/hexo-theme-next/source/js/utils.js
-@@ -206,6 +206,17 @@ NexT.utils = {
+@@ -213,6 +213,17 @@ NexT.utils = {
          scrollTop: 0
        });
      });

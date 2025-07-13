@@ -115,13 +115,11 @@ systemctl enable lxc-net # lxc-net auto start
 
 利用`dnsmasq`，令`lxcbr0`为容器提供DNS解析服务：
 ```bash
-systemctl status dnsmasq
 echo "port=5353" >> /etc/dnsmasq.d/lxc.conf
 echo "bind-interfaces" >> /etc/dnsmasq.d/lxc.conf
 echo "interface=lxcbr0" >> /etc/dnsmasq.d/lxc.conf
-systemctl start dnsmasq
-systemctl enable dnsmasq
 ```
+注意LXC的`lxc-net.service`会自动启动一个`dnsmasq`实例，所以无需启动`dnsmasq.service`。
 
 ## 编辑容器配置文件；创建并进入容器
 

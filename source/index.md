@@ -5,6 +5,7 @@ comments: false
 is_home_page: true
 ---
 
-<blockquote id="bitcount">
-  <p>Ueber die Grosse Mauer</br>erreichen wir alle Ecken der Welt</p>
-</blockquote>
+<div id="bitcount">
+> Ueber die Grosse Mauer  
+> erreichen wir alle Ecken der Welt  
+</div>

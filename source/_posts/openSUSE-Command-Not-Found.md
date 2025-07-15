@@ -20,6 +20,9 @@ tags:
 ```bash
 sudo zypper in cnf
 ```
+
+<!-- more -->
+
 安装 `cnf` 时会自动安装与已安装的shell（bash或zsh）匹配的集成包（`cnf-bash`或`cnf-zsh`）。如果未自动安装，也可以手动安装对应的包。
 
 ### 使用

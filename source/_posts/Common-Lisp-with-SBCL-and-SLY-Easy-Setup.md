@@ -110,7 +110,7 @@ ros use ccl-bin
 
 安装[Emacs](https://www.gnu.org/software/emacs/)：
 ```bash
-sudo zypper in emacs
+sudo zypper in emacs emacs-x11
 ```
 在openSUSE安装的Emacs中，`~/.emacs`将加载`~/.gnu-emacs`与`~/.gnu-emacs-custom`，而在`~/.gnu-emacs`中包含了启用[MELPA](https://melpa.org/#/)的语句，无需另行添加：
 ```lisp

@@ -165,7 +165,8 @@ CL-USER>
 > 在REPL中输入测试代码并实时运行，按`TAB`补全；  
 > 键入`C-r`，回溯搜索REPL的历史输入；  
 > 键入`C-c C-b`，打断当前Lisp子进程；  
-> 键入`C-c M-o`，清空REPL中所有输出与结果；  
+> 键入`M-x sly-restart-inferior-lisp`，重启Lisp子进程；  
+> 键入`C-c M-o`，清空REPL界面中所有输出与结果；  
 > ……  
 > 在文件窗格键入`C-x C-s`保存代码；  
 > 在REPL窗格键入`(quit)`退出进程；  

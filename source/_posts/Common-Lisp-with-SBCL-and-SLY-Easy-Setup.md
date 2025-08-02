@@ -163,7 +163,8 @@ CL-USER>
 > 键入`C-M-x`，求值光标所在的顶层表达式；  
 > 键入`C-c C-k`，编译并加载当前源代码文件；  
 > 在REPL中输入测试代码并实时运行，按`TAB`补全；  
-> 键入`C-r`，回溯搜索REPL的历史输入；  
+> 键入`M-p`或`M-n`，回溯REPL的历史输入；  
+> 键入`C-r`，前向搜索REPL的历史输入；  
 > 键入`C-c C-b`，打断当前Lisp子进程；  
 > 键入`M-x sly-restart-inferior-lisp`，重启Lisp子进程；  
 > 键入`C-c M-o`，清空REPL界面中所有输出与结果；  

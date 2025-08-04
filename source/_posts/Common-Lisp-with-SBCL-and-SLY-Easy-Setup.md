@@ -56,7 +56,7 @@ make[2]: *** [Makefile:517: cmd-run.o] Error 1
 修复也不难，既然定义和调用都是正确的，只要在声明处补一个参数进去即可：
 ```diff
 - extern LVal register_runtime_options();
-+ extern LVal register_runtime_options(struct proc_opt* cmd);
++ extern struct proc_opt* register_runtime_options(struct proc_opt* cmd);
 ```
 **注意**：此节基于 **2025年7月** 的 Roswell `release`分支（commit 48eaa5b）。若阅读本文时 Roswell 版本已更新，请先尝试直接编译，无需此补丁。
 

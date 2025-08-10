@@ -173,6 +173,9 @@ CL-USER>
 > 在REPL窗格键入`(quit)`退出进程；  
 > 键入`C-x C-c`退出Emacs。
 
+如需将选区代码缩进对齐，可以使用Emacs自带的Lisp缩进工具：  
+`M-x indent-region`或`C-M-\`。
+
 若要学习更多SLY的命令或快捷键，可参考[SLY的文档](https://joaotavora.github.io/sly/)；  
 学习更多Emacs的命令或快捷键，可参考[Emacs的文档](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html)。
 

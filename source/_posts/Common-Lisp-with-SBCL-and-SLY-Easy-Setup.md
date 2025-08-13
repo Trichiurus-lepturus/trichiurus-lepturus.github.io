@@ -158,7 +158,6 @@ CL-USER>
 > 键入`C-x 3`，垂直（左右）分隔窗格；  
 > 键入`M-x sly`，打开SLY REPL；  
 > 键入`C-x o`，切换到另一个窗格；  
-> 键入`M-x display-line-numbers-mode`显示行号；  
 > 在文件窗格中编辑代码，按`C-M-i`补全；  
 > 键入`C-M-x`，求值光标所在的顶层表达式；  
 > 键入`C-c C-k`，编译并加载当前源代码文件；  
@@ -173,8 +172,10 @@ CL-USER>
 > 在REPL窗格键入`(quit)`退出进程；  
 > 键入`C-x C-c`退出Emacs。
 
-如需将选区代码缩进对齐，可以使用Emacs自带的Lisp缩进工具：  
-`M-x indent-region`或`C-M-\`。
+另外，如需将选区代码缩进对齐，可以使用Emacs自带的Lisp缩进工具  
+`M-x indent-region`或`C-M-\`；  
+如需为源代码编辑自动启用行号显示，可在配置文件中加入这样一行：  
+`(add-hook 'prog-mode-hook #'display-line-numbers-mode)`。
 
 若要学习更多SLY的命令或快捷键，可参考[SLY的文档](https://joaotavora.github.io/sly/)；  
 学习更多Emacs的命令或快捷键，可参考[Emacs的文档](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html)。

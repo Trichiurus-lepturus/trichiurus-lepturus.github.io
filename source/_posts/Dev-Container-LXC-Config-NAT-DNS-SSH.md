@@ -111,16 +111,6 @@ systemctl start lxc-net
 systemctl enable lxc-net # lxc-net auto start
 ```
 
-## 配置DNS（宿主机部分）
-
-利用`dnsmasq`，令`lxcbr0`为容器提供DNS解析服务：
-```bash
-echo "port=5353" >> /etc/dnsmasq.d/lxc.conf
-echo "bind-interfaces" >> /etc/dnsmasq.d/lxc.conf
-echo "interface=lxcbr0" >> /etc/dnsmasq.d/lxc.conf
-```
-注意LXC的`lxc-net.service`会自动启动一个`dnsmasq`实例，所以无需启动`dnsmasq.service`。
-
 ## 编辑容器配置文件；创建并进入容器
 
 参考[Manpage](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)，
@@ -161,19 +151,19 @@ lxc-attach --name <container_name>
 所有的LXC命令都是以“lxc-”开头的，而形如“lxc 空格 子命令”的格式为LXD独有，并不在本文讨论范围内。
 命令用法可以参考[Manpages](https://linuxcontainers.org/lxc/manpages/)。
 
-## 配置DNS（容器内部分）
+## 配置DNS
 
 首先要注意`/etc/resolv.conf`是否是一个符号链接，根据具体情况不同，有不同的配置方法。
 以openSUSE为例，可先关闭[`netconfig`](https://manpages.opensuse.org/Tumbleweed/sysconfig-netconfig/netconfig.8.en.html)，
-而后手动写入`/etc/resolv.conf`文件。
+而后手动写入`/etc/resolv.conf`文件，详情可阅读手册：`man resolv.conf`。
 ```bash
 # in container
 sed -i 's/^NETCONFIG_DNS_POLICY="auto"/NETCONFIG_DNS_POLICY=""/' /etc/sysconfig/network/config
 rm /etc/resolv.conf
-echo "nameserver <ip_prefix>.1" > /etc/resolv.conf
+echo "nameserver <dns_server>" >> /etc/resolv.conf
 ```
 
-## 配置SSH（公钥登录）
+## 配置SSH
 
 ### 安装[openssh](https://www.openssh.com/)
 

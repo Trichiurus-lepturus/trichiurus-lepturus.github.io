@@ -458,7 +458,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: JetBrains Mono
+    family: Fira Mono
 
 
 # ---------------------------------------------------------------

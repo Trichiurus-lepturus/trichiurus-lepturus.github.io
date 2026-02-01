@@ -6,6 +6,7 @@ is_home_page: true
 ---
 
 <div id="bitcount">
-> Ueber die Grosse Mauer  
-> erreichen wir alle Ecken der Welt  
+  <blockquote>
+    <p>Ueber die Grosse Mauer<br>erreichen wir alle Ecken der Welt</p>
+  </blockquote>
 </div>

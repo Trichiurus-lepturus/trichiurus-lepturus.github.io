@@ -23,6 +23,7 @@ tags:
 
 ## 00 硬件信息
 
+主板: KaiTian KHG3X00MB1
 CPU: Hygon C86-3G 8C16T amd64  
 GPU: Glenfly Arise1020  
 RAM: Zentel DDR4 3200MHz 16GiB  

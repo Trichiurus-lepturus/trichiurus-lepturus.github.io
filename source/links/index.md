@@ -52,4 +52,6 @@ sitemap: false
 - Title: 海鲜市场的带鱼摊子  
 - URL: https://daiyu.host  
 - Description: "真正的魔力，源自理解哪些咒语奏效、何时奏效、效果如何；其诀窍，就在于参悟诀窍"  
-在评论区评论Title/URL/Description，而后邮箱联系w
+（出自 John Barth *Chimera*，@Trichiurus-lepturus 改译）
+
+请在下方评论区写上您的 Title/URL/Description，而后邮箱联系 (≧▽≦)/
